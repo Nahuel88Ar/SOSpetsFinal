@@ -1,4 +1,4 @@
 Bienvenidos!!!
 dejamos el link de nuestro proyecto
-SOSpetsFinal.github.io
+https://github.com/Nahuel88Ar/SOSpetsFinal.github.io/index
 
