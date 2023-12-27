@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Refugios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+    crossorigin="anonymous">
+    <link rel="shortcut icon" href="../img/favicon_sos.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://use.fontawesome.com/24674f720f.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="../css/style3.css" />
+    <title>S.O.S PETS</title>
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor_logo_header">
+          <img src="../img/logo_sos_pets.png" alt="logo" class="logo-header" />
+        </div>
+        <div class="frase-header">
+          <p id="p1">"NO COMPRES UNO DE RAZA, <br />ADOPTA UNO SIN CASA"</p>
+          <p id="p2">"NO COMPRES UNO DE RAZA, ADOPTA UNO SIN CASA"</p>
+        </div>
+    </header>
+    <nav class="navbar">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="Refugios.html" class="nav-link">Refugios</a>
+        <a href="Donaciones.html" class="nav-link">Donaciones</a>
+        <a href="formulario3.html" class="nav-link">Contactanos</a>
+        <a href="lista_refugios.html" class="nav-link">Nuevos refugios</a>
+    </nav>
+    <main>
+        <div id="app" class="container">
+            <h1>Refugios</h1>
+            <br>
+            <a class="btn btn-primary" href="refugio_nuevo.html">Nuevo</a>
+            <br><br>
+            <div v-if="error">
+                <p>Lo sentimos , ........</p>
+            </div>
+            <div v-else>
+                <section v-if="cargando">
+                    <div class="spinner-border"></div>
+                    <p>Cargando .....</p>
+                </section>
+                <section v-else>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Domicilio</th>
+                                    <th scope="col">Ciudad</th>
+                                    <th scope="col">Provincia</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="" v-for="refugio in refugios">
+                                    <td scope="row">{{refugio.id}}</td>
+                                    <td>{{refugio.nombre}}</td>
+                                    <td>{{refugio.domicilio}}</td>
+                                    <td>{{refugio.ciudad}}</td>
+                                    <td>{{refugio.provincia}}</td>
+                                    <td>
+                                        <a class="btn btn-primary" :href="'refugio_update.html?id='+ refugio.id" >Editar</a>
+                                        <button type="button" class="btn btn-danger" v-on:click="eliminar(refugio.id)" >Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <a
+          class="logo_footer"
+          href="https://www.facebook.com/profile.php?id=61551718114016"
+          target="_blank"
+        >
+          <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i
+        ></a>
+        <a
+          class="logo_footer"
+          href="https://www.instagram.com/sospets23/"
+          target="_blank"
+          ><i class="fa fa-instagram fa-2x" aria-hidden="true"></i
+        ></a>
+        <a class="logo_footer" href="mailto:sospets23@gmail.com" target="_blank"
+          ><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i
+        ></a>
+  
+        <br />
+        <p>Derechos Reservados copyrigth 2023</p>
+        <br />
+    </footer>
+    <!--Link de Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script
+src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+crossorigin="anonymous"></script>
+    <!--<script src="../Server/JS/main.js"></script>-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+    <script src="../Server/JS/refugios.js"></script>
+</body>
+</html>
