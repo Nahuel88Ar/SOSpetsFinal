@@ -46,7 +46,8 @@ const { createApp } = Vue
                 fetch(this.url, options)
                     .then(function () {
                         alert("Registro modificado")
-                        window.location.href = "./lista_refugios.html";
+                        //window.location.href = "./lista_refugios.html";
+                        window.location.href = '../../Pages/lista_refugios.html';
                     })
                     .catch(err => {
                         console.error(err);
